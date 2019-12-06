@@ -7,16 +7,20 @@ router.get('/', (req, res) => {
      });
 });
 
-// router.get('/a?r', (req, res) => {
-//     res.send('router a?r');
-// });
-
-// router.get('/a+r', (req, res) => {
-//     res.send('router a+r');
-// });
-
 router.get('/a*r', (req, res) => {
     res.send('router a*r');
+});
+
+router.get('/params/:name', (req, res) => {
+    res.json({
+        params  : req.params,
+        host    : req.host,
+        headers : req.headers,
+    });
+});
+
+router.post('/body', (req, res) => {
+    res.json(req.body);
 });
 
 module.exports = router;
