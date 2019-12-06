@@ -7,4 +7,16 @@ router.get('/', (req, res) => {
      });
 });
 
+// router.get('/a?r', (req, res) => {
+//     res.send('router a?r');
+// });
+
+// router.get('/a+r', (req, res) => {
+//     res.send('router a+r');
+// });
+
+router.get('/a*r', (req, res) => {
+    res.send('router a*r');
+});
+
 module.exports = router;
