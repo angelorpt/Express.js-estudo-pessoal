@@ -1,6 +1,13 @@
 var express = require('express');
 var router  = express.Router();
 
+
+// Middleware
+router.use((req, res, next) => {
+    console.log('HELLO FROM CUSTOM MIDDLEWARE OF ROUTES');
+    next();
+});
+
 router.get('/', (req, res) => {
      res.json({
         message: 'hello world'
